@@ -44,10 +44,9 @@ class HomeMobile extends StatelessWidget {
           ),
           Space.y(1.w)!,
           Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                "A ",
+                "A",
                 style: TextStyle(
                   fontSize: isFontSize(context, 18),
                   fontWeight: FontWeight.w400,

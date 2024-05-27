@@ -67,7 +67,9 @@ class _MobileCCButtonState extends State<MobileCCButton> {
             });
           },
           onTap: () {
-            setState(() => _animatedWidth = 125);
+            setState(
+              () => _animatedWidth = 125,
+            );
             widget.onTap();
           },
           child: SizedBox(

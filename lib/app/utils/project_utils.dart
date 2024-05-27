@@ -1,3 +1,5 @@
+import 'package:mysite/app/utils/platform_utils.dart';
+
 class ProjectUtils {
   final String banners;
   final String icons;
@@ -15,35 +17,21 @@ class ProjectUtils {
 
 List<ProjectUtils> projectUtils = [
   ProjectUtils(
-    banners: 'assets/imgs/02.png',
+    banners: 'assets/projects/project1.png',
     icons: 'assets/imgs/flutter.png',
-    titles: 'Awesome Social Media App',
+    titles: 'Awesome Hyper Apps Integration',
     description:
-        'This is a just Fully functional Social media App by using flutter, source code is also available, check below.',
-    links: 'https://github.com/sudeshnb/poetically-.git',
+        'As the lead mobile developer, I oversaw the creation of this fully functional Hyper App using Flutter. Check it out below.',
+    links: PlatformUtils.isMacOS
+        ? 'https://apps.apple.com/id/app/kada-id/id1602215141?l=id'
+        : 'https://play.google.com/store/apps/details?id=id.kada.mobileapp',
   ),
   ProjectUtils(
-    banners: 'assets/imgs/1.png',
-    icons: 'assets/imgs/flutter.png',
-    titles: 'Awesome CRM UI',
-    description:
-        'This is a just CRM UI Design using Figma, file is also available, check below.',
-    links: 'https://github.com/sudeshnb/',
-  ),
-  ProjectUtils(
-    banners: 'assets/imgs/03.png',
-    icons: 'assets/imgs/flutter.png',
-    titles: 'Exercise App',
-    description:
-        'This is a just Fully function Exercise App by using flutter, source code is also available, check below.',
-    links: 'https://github.com/sudeshnb/elderly_exercise_app.git',
-  ),
-  ProjectUtils(
-    banners: 'assets/imgs/04.png',
-    icons: 'assets/imgs/flutter.png',
-    titles: 'Awesome Plant App UI',
-    description:
-        'This is a just Plant App UI by using flutter, source code is also available, check below.',
-    links: 'https://github.com/sudeshnb/flutter_plant_app.git',
-  ),
+      banners: 'assets/projects/project2.png',
+      icons: 'assets/imgs/flutter.png',
+      titles: 'Awesome Flashcard Application',
+      description:
+          'I developed this impressive Hadith Flashcard Application entirely by myself. Check it out below.',
+      links:
+          'https://play.google.com/store/apps/details?id=com.hadith.flashcard'),
 ];

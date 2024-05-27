@@ -19,7 +19,6 @@ class ProjectCardState extends State<ProjectCard> {
 
   @override
   Widget build(BuildContext context) {
-    // double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     var theme = Theme.of(context);
     return InkWell(
@@ -36,6 +35,10 @@ class ProjectCardState extends State<ProjectCard> {
       },
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 1.w),
+        // padding: EdgeInsets.symmetric(
+        //   vertical: 2.w,
+        //   horizontal: 2.w,
+        // ),
         width: Responsive.isDesktop(context) ? 30.w : 70.w,
         height: 36.h,
         decoration: BoxDecoration(
@@ -47,7 +50,7 @@ class ProjectCardState extends State<ProjectCard> {
           fit: StackFit.expand,
           children: [
             Padding(
-              padding: isHover ? const EdgeInsets.all(20) : EdgeInsets.zero,
+              padding: const EdgeInsets.all(20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -85,13 +88,10 @@ class ProjectCardState extends State<ProjectCard> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
-                      image: AssetImage(widget.project.banners),
-                      fit: BoxFit.cover),
+                    fit: BoxFit.cover,
+                    image: AssetImage(widget.project.banners),
+                  ),
                 ),
-                // child: Image.asset(
-                //   widget.project.banners,
-                //   fit: BoxFit.cover,
-                // ),
               ),
             ),
           ],

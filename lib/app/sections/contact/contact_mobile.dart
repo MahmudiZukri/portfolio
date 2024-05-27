@@ -43,12 +43,15 @@ class ContactMobileTab extends StatelessWidget {
         Space.y(10.w)!,
         Wrap(
             alignment: WrapAlignment.center,
+            crossAxisAlignment: WrapCrossAlignment.center,
             runSpacing: 50,
             children: contactUtils
                 .asMap()
                 .entries
                 .map((e) => IconButton(
                       icon: Image.network(
+                        height: 50.0,
+                        width: 50.0,
                         e.value.icon,
                         color: theme.textColor,
                       ),

@@ -24,7 +24,7 @@ class HomeTab extends StatelessWidget {
         children: [
           Positioned(
             right: 10.w,
-            bottom: 20.w,
+            bottom: 14.w,
             child: const EntranceFader(
               offset: Offset(0, 0),
               delay: Duration(seconds: 1),
@@ -69,7 +69,7 @@ class HomeTab extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "A ",
+                        "A",
                         style: TextStyle(
                           fontSize: isFontSize(context, 24),
                           fontWeight: FontWeight.w400,
