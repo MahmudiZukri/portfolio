@@ -9,6 +9,7 @@ import 'package:mysite/core/animations/entrance_fader.dart';
 import 'package:mysite/core/animations/zoom_animation.dart';
 import 'package:mysite/core/configs/configs.dart';
 import 'package:mysite/core/res/responsive_size.dart';
+import 'package:mysite/core/util/constants.dart';
 import 'package:sizer/sizer.dart';
 import 'package:universal_html/html.dart' as html;
 
@@ -24,7 +25,7 @@ class HomeTab extends StatelessWidget {
         children: [
           Positioned(
             right: 10.w,
-            bottom: 14.w,
+            bottom: 6.w,
             child: const EntranceFader(
               offset: Offset(0, 0),
               delay: Duration(seconds: 1),
@@ -37,6 +38,8 @@ class HomeTab extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Space.y(6.w)!,
+
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -94,10 +97,19 @@ class HomeTab extends StatelessWidget {
                   ),
                 ),
                 Space.y(2.w)!,
+
+                // comment for now, until we have a proper cv
+
+                // ColorChageButton(
+                //   text: 'download cv',
+                //   onTap: () {
+                //     html.window.open(resume, "pdf");
+                //   },
+                // ),
                 ColorChageButton(
-                  text: 'download cv',
+                  text: 'contact me',
                   onTap: () {
-                    html.window.open(resume, "pdf");
+                    openURL(whatsapp);
                   },
                 ),
               ],

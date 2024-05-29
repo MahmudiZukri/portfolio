@@ -13,7 +13,7 @@ class NavBarLogo extends StatelessWidget {
     var textSty = TextStyle(
       color: theme.textColor,
       fontWeight: FontWeight.w100,
-      fontSize: Responsive.isDesktop(context) ? 32 : 20,
+      fontSize: Responsive.isDesktop(context) ? 28 : 16,
     );
 
     return Row(

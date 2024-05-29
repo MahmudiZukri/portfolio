@@ -21,6 +21,7 @@ class ContactDesktop extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: size.width / 8),
       child: Column(
         children: [
+          SizedBox(height: size.height * 0.2),
           const CustomSectionHeading(text: "\nGet in Touch"),
           Space.y(1.w)!,
           const CustomSectionSubHeading(
@@ -36,52 +37,53 @@ class ContactDesktop extends StatelessWidget {
               boxShadow: [blackColorShadow],
             ),
             child: Column(
-              // crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          contactHeadding,
-                          style: TextStyle(
-                            height: 1.2,
-                            fontSize: 8.sp,
-                            fontWeight: FontWeight.w600,
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            contactHeadding,
+                            style: TextStyle(
+                              height: 1.2,
+                              fontSize: 8.sp,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
-                        ),
-
-                        Space.y(1.w)!,
-                        Text(
-                          contactSubHeadding,
-                          style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w100,
+                          Space.y(1.w)!,
+                          Text(
+                            contactSubHeadding,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w100,
+                            ),
                           ),
-                        ),
-                        Space.y(2.w)!,
-                        // SizedBox(height: AppDimensions.space(3)),
-                      ],
+                          Space.y(2.w)!,
+                        ],
+                      ),
                     ),
-                    InkWell(
-                      onTap: () => openURL(whatsapp),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 5, horizontal: 20),
-                        decoration: BoxDecoration(
+                    Flexible(
+                      child: InkWell(
+                        onTap: () => openURL(whatsapp),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 10,
+                            horizontal: 32,
+                          ),
+                          decoration: BoxDecoration(
                             gradient: buttonGradi,
-                            // border: Border.all(
-                            //     width: 2.0, color: theme.primaryColor),
-                            borderRadius: BorderRadius.circular(10)),
-                        child: const Text(
-                          'Get Started',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            color: textColor,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: const Text(
+                            'Get Started',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              color: textColor,
+                            ),
                           ),
                         ),
                       ),
@@ -89,27 +91,31 @@ class ContactDesktop extends StatelessWidget {
                   ],
                 ),
                 Container(color: Colors.white.withOpacity(0.2), height: 1),
-                Space.y(2.w)!,
+                Space.y(6.w)!,
                 Wrap(
-                    alignment: WrapAlignment.center,
-                    runSpacing: 50,
-                    children: contactUtils
-                        .asMap()
-                        .entries
-                        .map((e) => IconButton(
-                              icon: Image.network(
-                                e.value.icon,
-                                color: theme.textColor,
-                              ),
-                              onPressed: () => openURL(e.value.url),
-                              highlightColor: Colors.white54,
-                              iconSize: 21,
-                            ))
-                        .toList()),
+                  alignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  runSpacing: 50,
+                  children: contactUtils
+                      .asMap()
+                      .entries
+                      .map((e) => IconButton(
+                            icon: Image.network(
+                              height: 50.0,
+                              width: 50.0,
+                              e.value.icon,
+                              color: theme.textColor,
+                            ),
+                            onPressed: () => openURL(e.value.url),
+                            highlightColor: Colors.white54,
+                            iconSize: 21,
+                          ))
+                      .toList(),
+                ),
+                Space.y(6.w)!,
               ],
             ),
           ),
-          // Space.y!,
         ],
       ),
     );

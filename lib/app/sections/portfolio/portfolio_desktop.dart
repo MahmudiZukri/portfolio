@@ -48,8 +48,8 @@ class _PortfolioDesktopState extends State<PortfolioDesktop> {
               child: Text(
                 'See More',
                 style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),

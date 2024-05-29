@@ -1,6 +1,7 @@
 import 'package:mysite/app/sections/home/widgets/animation_text.dart';
 import 'package:mysite/core/animations/zoom_animation.dart';
 import 'package:mysite/core/res/responsive_size.dart';
+import 'package:mysite/core/util/constants.dart';
 import 'package:sizer/sizer.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -37,11 +38,13 @@ class HomeDesktop extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text(hellotag,
-                          style: const TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.w100,
-                          )),
+                      Text(
+                        hellotag,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w100,
+                        ),
+                      ),
                       EntranceFader(
                         offset: const Offset(0, 0),
                         delay: const Duration(seconds: 2),
@@ -53,17 +56,19 @@ class HomeDesktop extends StatelessWidget {
                   Space.y(0.5.w)!,
                   Text(yourname,
                       style: const TextStyle(
-                        fontSize: 50,
+                        fontSize: 40,
                         fontWeight: FontWeight.w600,
                       )),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      const Text("A ",
-                          style: TextStyle(
-                            fontSize: 32,
-                            fontWeight: FontWeight.w400,
-                          )),
+                      const Text(
+                        "A",
+                        style: TextStyle(
+                          fontSize: 32,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
                       AnimatedTextKit(
                         isRepeatingAnimation: true,
                         repeatForever: true,
@@ -72,26 +77,38 @@ class HomeDesktop extends StatelessWidget {
                     ],
                   ),
                   Space.y(1.5.w)!,
-                  Padding(
-                    padding: EdgeInsets.only(right: 10.w),
-                    child: Text(miniDescription,
+                  Flexible(
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 10.w),
+                      child: Text(
+                        miniDescription,
                         style: TextStyle(
-                          fontSize: isFontSize(context, 20),
+                          fontSize: isFontSize(context, 16),
                           fontWeight: FontWeight.w400,
                           color: theme.textColor.withOpacity(0.6),
-                        )),
+                        ),
+                      ),
+                    ),
                   ),
                   Space.y(3.w)!,
+
+                  // comment for now, until we have a proper cv
+                  // ColorChageButton(
+                  //   text: 'download cv',
+                  //   onTap: () {
+                  //     html.window.open(resume, "pdf");
+                  //   },
+                  // ),
                   ColorChageButton(
-                    text: 'download cv',
+                    text: 'contact me',
                     onTap: () {
-                      html.window.open(resume, "pdf");
+                      openURL(whatsapp);
                     },
                   ),
                 ],
               ),
             ),
-            const ZoomAnimations(),
+            const Flexible(child: ZoomAnimations()),
           ],
         ),
       ),

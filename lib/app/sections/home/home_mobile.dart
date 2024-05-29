@@ -8,6 +8,7 @@ import 'package:mysite/core/animations/entrance_fader.dart';
 import 'package:mysite/core/animations/zoom_animation.dart';
 import 'package:mysite/core/configs/configs.dart';
 import 'package:mysite/core/res/responsive_size.dart';
+import 'package:mysite/core/util/constants.dart';
 import 'package:sizer/sizer.dart';
 import 'package:universal_html/html.dart' as html;
 
@@ -23,6 +24,7 @@ class HomeMobile extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Space.y(6.w)!,
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -30,11 +32,9 @@ class HomeMobile extends StatelessWidget {
                 hellotag,
                 style: AppText.h3!.copyWith(fontSize: isFontSize(context, 16)),
               ),
-              // Space.x!,
               Image.asset(StaticImage.hi, height: 10.sp),
             ],
           ),
-          // Space.y(1.w)!,
           Text(
             yourname,
             style: TextStyle(
@@ -59,15 +59,22 @@ class HomeMobile extends StatelessWidget {
               ),
             ],
           ),
-
           Space.y(2.w)!,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              // comment for now, until we have a proper cv
+
+              // ColorChageButton(
+              //   text: 'download cv',
+              //   onTap: () {
+              //     html.window.open(resume, "pdf");
+              //   },
+              // ),
               ColorChageButton(
-                text: 'download cv',
+                text: 'contact me',
                 onTap: () {
-                  html.window.open(resume, "pdf");
+                  openURL(whatsapp);
                 },
               ),
               const EntranceFader(

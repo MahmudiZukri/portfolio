@@ -12,15 +12,15 @@ class CustomSectionHeading extends StatelessWidget {
     return Responsive(
       desktop: Text(
         text,
-        style: const TextStyle(fontSize: 56),
+        style: const TextStyle(fontSize: 46),
       ),
       tablet: Text(
         text,
-        style: const TextStyle(fontSize: 36),
+        style: const TextStyle(fontSize: 26),
       ),
       mobile: Text(
         text,
-        style: const TextStyle(fontSize: 26),
+        style: const TextStyle(fontSize: 18),
       ),
     );
   }
@@ -41,7 +41,7 @@ class CustomSectionSubHeading extends StatelessWidget {
         textAlign: TextAlign.center,
         style: TextStyle(
           color: theme.textColor.withOpacity(0.6),
-          fontSize: 18,
+          fontSize: 16,
         ),
       ),
       tablet: Text(

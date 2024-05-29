@@ -27,7 +27,10 @@ class ContactMobileTab extends StatelessWidget {
         InkWell(
           onTap: () => openURL(whatsapp),
           child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+            padding: const EdgeInsets.symmetric(
+              vertical: 10,
+              horizontal: 32,
+            ),
             decoration: BoxDecoration(
                 gradient: buttonGradi, borderRadius: BorderRadius.circular(10)),
             child: const Text(
@@ -42,24 +45,25 @@ class ContactMobileTab extends StatelessWidget {
         ),
         Space.y(10.w)!,
         Wrap(
-            alignment: WrapAlignment.center,
-            crossAxisAlignment: WrapCrossAlignment.center,
-            runSpacing: 50,
-            children: contactUtils
-                .asMap()
-                .entries
-                .map((e) => IconButton(
-                      icon: Image.network(
-                        height: 50.0,
-                        width: 50.0,
-                        e.value.icon,
-                        color: theme.textColor,
-                      ),
-                      onPressed: () => openURL(e.value.url),
-                      highlightColor: Colors.white54,
-                      iconSize: 21,
-                    ))
-                .toList()),
+          alignment: WrapAlignment.center,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          runSpacing: 50,
+          children: contactUtils
+              .asMap()
+              .entries
+              .map((e) => IconButton(
+                    icon: Image.network(
+                      height: 50.0,
+                      width: 50.0,
+                      e.value.icon,
+                      color: theme.textColor,
+                    ),
+                    onPressed: () => openURL(e.value.url),
+                    highlightColor: Colors.white54,
+                    iconSize: 21,
+                  ))
+              .toList(),
+        ),
         Space.y(5.w)!,
         Container(color: Colors.white.withOpacity(0.2), height: 1),
       ],
