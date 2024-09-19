@@ -33,8 +33,15 @@
   <link rel="manifest" href="manifest.json">
 
   <script>
+    // Ensure this script runs before the Flutter app is loaded
+    window.__flutter__ = {
+      canvasKitForceCpuOnly: true // Force CPU-only rendering
+    };
+  </script>
+
+  <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "3598851976";
+    const serviceWorkerVersion = "2098228272";
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
