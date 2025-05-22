@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flutter WebView Communication Test</title>
+</head>
+<body>
+  <h1>Welcome to Your Web App</h1>
+  <p id="output">Waiting for data from Flutter...</p>
+
+  <script>
+    // This function will be called by Flutter WebView
+    window.receiveFromFlutter = function(treatmentId) {
+      console.log("Received from Flutter:", treatmentId);
+      const output = document.getElementById('output');
+      if (output) {
+        output.textContent = 'Treatment ID received: ' + treatmentId;
+      }
+    };
+  </script>
+</body>
+</html>
